@@ -1,0 +1,18 @@
+<header>
+  <dij-header></dij-header>
+</header>
+<main>
+  <div>
+    <dij-table
+      (onCellHover)="controls.hoverCell($event)"
+      (onCellClick)="controls.clickCell($event)"
+    ></dij-table>
+  </div>
+  <div class="content-wrapper">
+    <div class="controls-section-wrapper">
+      <dij-path-controls #controls></dij-path-controls>
+      <dij-path-info></dij-path-info>
+    </div>
+    <dij-path-history></dij-path-history>
+  </div>
+</main>
