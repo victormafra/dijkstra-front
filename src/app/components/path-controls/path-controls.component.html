@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <div
+  *ngFor="let controlRow of controlRows; index as index"
+  [ngClass]="this.pathingService.getCurrentStep() === index ? 'selected' : ''"
+  class="control-row"
+  >
+    <img [src]="controlRow.imagePath" [alt]="controlRow.imageDescription" width="24px" />
+    <input formControlName="{{controlRow.name+'_letter'}}" class="letter-square">
+    <input formControlName="{{controlRow.name+'_number'}}" class="number-square">
+  </div>
+</form>

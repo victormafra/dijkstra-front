@@ -1,0 +1,35 @@
+<h2> History </h2>
+<div class="history-entry-wrapper">
+  <div *ngFor="let entry of history; index as i" class="history-entry">
+    <span>{{i + 1}}.</span>
+
+    <div class="content">
+      <img
+        src="../../../assets/icons/drone.png"
+        alt="an icon of a drone"
+        width="16px"
+      />
+      <span>{{entry.droneCell}}</span>
+    </div>
+
+    <div class="content">
+      <img
+        src="../../../assets/icons/box.png"
+        alt="an icon of a package"
+        width="16px"
+      />
+      <span>{{entry.packageCell}}</span>
+    </div>
+
+    <div class="content">
+      <img
+        src="../../../assets/icons/home.png"
+        alt="an icon of a house"
+        width="16px"
+      />
+      <span>{{entry.houseCell}}</span>
+    </div>
+    <span>{{entry.time}}s</span>
+  </div>
+  <div *ngFor="let entry of fillerArray" class="history-entry"></div>
+</div>

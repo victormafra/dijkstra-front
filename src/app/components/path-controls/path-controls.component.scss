@@ -1,0 +1,36 @@
+form {
+  display: grid;
+  height: 80%;
+  row-gap: 5%;
+  grid-template-rows: repeat(3, 33%);
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.drone-image, .package-image, .house-image {
+  min-width: 50px;
+}
+
+.letter-square, .number-square {
+  height: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--dark-color);
+  text-align: center;
+
+  &:focus-visible {
+    outline: 0px;
+  }
+}
+
+input {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.selected {
+  background: linear-gradient(90deg, #c1c1ff 0%, rgb(9 9 121 / 6%) 100%);
+}

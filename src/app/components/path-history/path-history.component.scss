@@ -1,0 +1,30 @@
+:host {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  font-weight: 600;
+}
+
+.history-entry-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(5, 20%);
+  column-gap: 5px;
+  row-gap: 2%;
+  height: 92%;
+}
+
+.history-entry {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-left: 5px;
+  outline: 1px solid black;
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  height: 100%;
+}

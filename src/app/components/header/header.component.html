@@ -1,0 +1,18 @@
+<h1 *ngIf="this.pathingService.getCurrentStep() === pathSelectionStep.Drone_Selection">
+  1st step: Select on the table where the drone will start
+</h1>
+
+<h1 *ngIf="this.pathingService.getCurrentStep() === pathSelectionStep.Package_Selection">
+  2nd step: Select the package location on the table
+</h1>
+
+<h1 *ngIf="this.pathingService.getCurrentStep() === pathSelectionStep.House_Selection">
+  3rd step: Select the house location on the table
+</h1>
+
+<h1 *ngIf="this.pathingService.getCurrentStep() === pathSelectionStep.Find_New_Path"
+  class="clickable"
+  (click)="this.pathingService.resetPathSelectionStep()"
+>
+  Click here to find a new path!
+</h1>

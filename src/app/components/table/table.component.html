@@ -1,0 +1,38 @@
+<table>
+  <tbody>
+    <tr *ngFor="let column of columns">
+      <td
+        *ngFor="let letter of allLetters | slice:0:math.min(numberOfRows, 26); index as row"
+        [ngClass]="getCellClass(row, column, letter)"
+        (click)="cellClicked(column, letter)"
+        (mouseenter)="cellHovered(column, letter)"
+      >
+        <img
+          *ngIf="droneLocation?.x === column && droneLocation?.y === letter"
+          src="../../../assets/icons/drone.png"
+          alt="an icon of a drone"
+          width="32px"
+          [ngClass]="(row + column) % 2 ? '' : 'inverted'" />
+        <img
+          *ngIf="packageLocation?.x === column && packageLocation?.y === letter"
+          src="../../../assets/icons/box.png"
+          alt="an icon of a package"
+          width="24px"
+          [ngClass]="(row + column) % 2 ? '' : 'inverted'" />
+        <img
+          *ngIf="houseLocation?.x === column && houseLocation?.y === letter"
+          src="../../../assets/icons/home.png"
+          alt="an icon of a house"
+          width="24px"
+          [ngClass]="(row + column) % 2 ? '' : 'inverted'" />
+        <span
+          *ngIf="
+            !(droneLocation?.x === column && droneLocation?.y === letter) &&
+            !(packageLocation?.x === column && packageLocation?.y === letter) &&
+            !(houseLocation?.x === column && houseLocation?.y === letter)
+          "
+          >{{letter}}{{column}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
